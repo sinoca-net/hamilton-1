@@ -448,7 +448,7 @@
 
     <!-- CTA PRINCIPAL -->
     <a
-      href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20registrarme%20en%20Hamilton%20y%20activar%20mi%20bono%20del%2050%25%20%F0%9F%8E%81"
+      href="#"
       class="cta-btn"
       id="cta-whatsapp"
       onclick="trackContactar()"
@@ -513,7 +513,7 @@
   <!-- STICKY CTA -->
   <div class="sticky-cta">
     <a
-      href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20registrarme%20en%20Hamilton%20y%20activar%20mi%20bono%20del%2050%25%20%F0%9F%8E%81"
+      href="#"
       class="cta-btn"
       onclick="trackContactar()"
       target="_blank"
@@ -532,6 +532,16 @@
   </footer>
 
   <script>
+    // ===== NÚMERO DE WHATSAPP — CAMBIAR POR LANDING =====
+    const WA_NUMBER = '5492236740089'; // Landing 1
+    const WA_MESSAGE = encodeURIComponent('Hola, quiero registrarme en Hamilton y activar mi bono del 50% 🎁');
+    const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+
+    // Asignar URL a todos los botones WhatsApp
+    document.querySelectorAll('.cta-btn').forEach(btn => {
+      btn.href = WA_URL;
+    });
+
     // ===== EVENTO CLICKWHATSAPP — PIXEL =====
     function trackContactar() {
       if (typeof fbq !== 'undefined') {
